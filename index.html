@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="notify"></div>
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'Game')" id="defaultOpen">Game</button>
         <button class="tablinks" onclick="openTab(event, 'Options')">Options</button>
@@ -23,9 +24,10 @@
         <h2>Options</h2>
         <button id="saveButton">Save Game</button>
         <button id="wipeButton">Wipe Data</button>
-        <div id="notify"></div>
+       
     </div>
 
+    <script src="break_eternity.min.js"></script>
     <script src="game.js"></script>
     <script src="autosave.js"></script>
     <script src="option.js"></script>

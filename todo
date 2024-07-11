@@ -23,9 +23,10 @@ Gameplan:
             From start you bruteforce like Phone-A then you can unlock
             Phone B with give Xmore speed
 
+    - Implement https://github.com/Patashu/break_eternity.js
 Style: 
     - Fix CSS on all
-    
+
 
 
 

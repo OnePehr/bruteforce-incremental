@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.removeItem('bruteForceCapacity');
                 localStorage.removeItem('crackRate');
                 localStorage.removeItem('upgradeCost');
+                localStorage.removeItem('ownedUpgrades');
                 localStorage.removeItem('lastSaveTime');
-                bruteForceCapacity = 0;
-                crackRate = 0;
-                upgradeCost = 0;
-                updateCrackRateDisplay();
-                updateUpgradeCostDisplay();
+                bruteForceCapacity = new Decimal(1); // Start with 1 brute force capacity
+                crackRate = new Decimal(0);
+                upgradeCost = new Decimal(1); // Reset to initial cost
+                ownedUpgrades = new Decimal(0); // Reset to no upgrades owned
+                updateDisplay();
                 notify('User data wiped', 'warning', 'delete');
                 console.log('User data wiped');
             } else {
@@ -29,14 +30,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-function notify(text, type, icon) {
-    var n = document.createElement("div");
-    n.className = "notify_div " + (type || "success");
-    n.innerHTML = `${text}`;
-    document.getElementById("notify").appendChild(n);
-
-    setTimeout(() => {
-        n.remove();
-    }, 6000);
-}
