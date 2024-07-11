@@ -1,5 +1,7 @@
 function saveGame(showNotification = true) {
-    localStorage.setItem('points', points);
+    localStorage.setItem('bruteForceCapacity', bruteForceCapacity);
+    localStorage.setItem('crackRate', crackRate);
+    localStorage.setItem('upgradeCost', upgradeCost);
     localStorage.setItem('lastSaveTime', Date.now()); // Save the current timestamp
     if (showNotification) {
         notify('Game saved', 'success', 'save');
@@ -8,23 +10,35 @@ function saveGame(showNotification = true) {
 }
 
 function loadGame() {
-    const savedPoints = localStorage.getItem('points');
+    const savedBruteForceCapacity = localStorage.getItem('bruteForceCapacity');
+    const savedCrackRate = localStorage.getItem('crackRate');
+    const savedUpgradeCost = localStorage.getItem('upgradeCost');
     const lastSaveTime = localStorage.getItem('lastSaveTime');
-    
-    if (savedPoints !== null) {
-        points = parseFloat(savedPoints);
-        updatePointsDisplay();
+
+    if (savedBruteForceCapacity !== null) {
+        bruteForceCapacity = parseFloat(savedBruteForceCapacity);
+        updateCrackRateDisplay();
         console.log('Game loaded');
     }
-    
+
+    if (savedCrackRate !== null) {
+        crackRate = parseFloat(savedCrackRate);
+        updateCrackRateDisplay();
+    }
+
+    if (savedUpgradeCost !== null) {
+        upgradeCost = parseFloat(savedUpgradeCost);
+        updateUpgradeCostDisplay();
+    }
+
     if (lastSaveTime !== null) {
         const currentTime = Date.now();
         const elapsedTime = (currentTime - lastSaveTime) / 1000; // Convert to seconds
-        const offlinePoints = elapsedTime * 1; // Points per second
-        points += offlinePoints;
-        updatePointsDisplay();
-        console.log(`Offline progress: ${offlinePoints.toFixed(2)} points`);
-        notify(`Offline progress: ${offlinePoints.toFixed(2)} points`, 'info', 'offline');
+        const offlineProgress = elapsedTime * crackRate; // Brute force capacity per second
+        bruteForceCapacity += offlineProgress;
+        updateCrackRateDisplay();
+        console.log(`Offline progress: ${offlineProgress.toFixed(2)} brute force capacity`);
+        notify(`Offline progress: ${offlineProgress.toFixed(2)} brute force capacity`, 'info', 'offline');
     }
 }
 

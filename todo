@@ -1,0 +1,31 @@
+Gameplan:  
+    - store up in incremental pace with upgrades and such to reach (diff upgrades below)
+        Diiferent upgrades:
+            - Knowledge of the Lock Type
+                Understanding whether the phone is locked by a PIN, pattern, password, fingerprint, or face recognition.
+            - Brute Force Software
+                Specialized software that can automate the process of entering different combinations. Examples include Hydra, John the Ripper, or custom scripts.
+            - Hardware
+                In some cases, specialized hardware might be needed to interface with the phone, especially if the software needs to communicate directly with the phone's hardware (e.g., via JTAG or UART interfaces).
+            - Access to the Phone
+                Physical possession of the phone is typically required.
+            - Knowledge of the Phone's System
+                Understanding of the phone’s operating system (e.g., Android, iOS) and any specific vulnerabilities or exploits that can be leveraged.
+            - bypass Mechanisms
+                Knowledge of any potential bypass techniques for lock screens, such as security vulnerabilities, exploits, or recovery mode features.
+            - Patience and Computational Power
+                Depending on the complexity of the lock (length and type of password/PIN), significant computational power and time might be required.
+            - Legal and Ethical Considerations
+    
+    - With enough is stored up you earn prestige points (Nr of bruteforced phones)
+        Prestige points:
+            - With prestige point you buy so you can bruteforce more phones
+            From start you bruteforce like Phone-A then you can unlock
+            Phone B with give Xmore speed
+
+Style: 
+    - Fix CSS on all
+    
+
+
+
